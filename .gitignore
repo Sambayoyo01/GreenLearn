@@ -1,0 +1,32 @@
+# === Archivos del sistema ===
+.DS_Store
+Thumbs.db
+
+# === Configuración de editores ===
+.vscode/
+
+# === Logs y archivos temporales ===
+*.log
+*.tmp
+*.cache
+
+# === Archivos de configuración sensibles ===
+.env
+includes/db.php
+includes/auth.php
+
+# === Composer (si lo usas en el futuro) ===
+vendor/
+composer.lock
+
+# === Node.js (por si usas npm en algún momento) ===
+node_modules/
+
+# === Archivos de base de datos locales ===
+*.sqlite
+*.sql
+
+# === Archivos personales que no deben subirse ===
+*.bak
+*.old
+*.swp
