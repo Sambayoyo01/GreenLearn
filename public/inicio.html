@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GreenLearn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      color: #222;
+    }
+    header {
+      background-color: #1ED760;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      background: linear-gradient(rgba(22, 109, 41, 0.6), rgba(22, 109, 41, 0.6)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center/cover;
+      color: white;
+      text-align: left;
+      padding: 120px 50px 100px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+    .hero .btn {
+      background-color: white;
+      color: #1ED760;
+      padding: 12px 25px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+    .section {
+      padding: 60px 40px;
+      background-color: white;
+    }
+    .section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .courses, .community {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px;
+      flex: 1;
+      min-width: 250px;
+      max-width: 280px;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .card button {
+      background-color: #1ED760;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .calculator {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+    .calculator input {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .calculator button {
+      background-color: #1ED760;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #1ED760;
+      color: white;
+      padding: 40px;
+    }
+    footer .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    footer .column {
+      margin-right: 20px;
+      min-width: 200px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>🌱 GreenLearn</strong></div>
+    <nav>
+      <a href="#">📖 Explorar Cursos</a>
+      <a href="#">🧾 Mis Cursos</a>
+      <a href="#">📱 Calculadora Ambiental</a>
+      <a href="#">👤 Crear Sala</a>
+      <a href="#">✉️ Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h4>🌍 Educación Ambiental Digital</h4>
+    <h1>Aprende, Mide y<br>Actúa por el Planeta</h1>
+    <p>La plataforma que te transforma en un ciudadano ecológico a través de educación interactiva, seguimiento de impacto y comunidad global.</p>
+    <button class="btn">💻 Comenzar Aprendizaje</button>
+    <div class="stats">
+      <div>10K+ <br> Estudiantes</div>
+      <div>50+ <br> Cursos</div>
+      <div>95% <br> Satisfacción</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Explora Nuestros <span style="color:#1ED760">Cursos</span></h2>
+    <div class="courses">
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?nature" alt="">
+        <p>Estilos de Vida Sostenibles</p>
+        <button>📘 Explorar Curso</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?forest" alt="">
+        <p>Energías Renovables</p>
+        <button>📘 Explorar Curso</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?climate" alt="">
+        <p>Conservación de Ecosistemas</p>
+        <button>📘 Explorar Curso</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: #f0fdf4;">
+    <h2>Calcula Tu <span style="color:#1ED760">Impacto Ambiental</span></h2>
+    <div class="calculator">
+      <input type="number" placeholder="Huella de Carbono">
+      <input type="number" placeholder="Consumo Energético">
+      <input type="number" placeholder="Uso de Agua">
+      <button>📊 Comenzar Estudio</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Únete a Nuestra <span style="color:#1ED760">Comunidad</span></h2>
+    <div class="community">
+      <div class="card">
+        <p>Salas de Estudio</p>
+      </div>
+      <div class="card">
+        <p>Foros de Discusión</p>
+      </div>
+      <div class="card">
+        <p>Logros Compartidos</p>
+      </div>
+      <div class="card">
+        <p>Red Internacional</p>
+      </div>
+    </div>
+    <br><br>
+    <h3>Crea Tu Propia Sala de Aprendizaje</h3>
+    <button class="btn">👥 Crear Sala</button>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="column">
+        <h3>🌱 GreenLearn</h3>
+        <p>Expertos en Educación Ambiental Digital. Conectamos ciudadanos globales para aprender, medir y actuar por el planeta.</p>
+      </div>
+      <div class="column">
+        <h4>Enlaces Rápidos</h4>
+        <a href="#">Inicio</a>
+        <a href="#">Cursos</a>
+        <a href="#">Comunidad</a>
+        <a href="#">Calculadora</a>
+      </div>
+      <div class="column">
+        <h4>Recursos</h4>
+        <a href="#">Centro de Ayuda</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top: 20px;">©2025 GreenLearn. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

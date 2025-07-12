@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curso Interactivo - Green Lear</title>
+  <link rel="stylesheet" href="curso.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <a href="inicio.html"><img src="Imagenes/logo.png" class="logo2"></a>GreenLearn
+      </div>
+    </div>
+  </header>
+
+  <main class="curso-main">
+    <h1 id="titulo-curso">Curso: Consumo Responsable</h1>
+    <p id="descripcion-curso">Aprende cómo reducir tu impacto ambiental con hábitos de consumo conscientes.</p>
+
+    <div class="leccion-box">
+      <h2 id="titulo-leccion">Lección 1: ¿Qué es el consumo responsable?</h2>
+      <p id="contenido-leccion">El consumo responsable significa elegir productos y servicios teniendo en cuenta su impacto ambiental y social.</p>
+    </div>
+
+    <div class="progreso">
+      <progress id="barra-progreso" value="1" max="3"></progress>
+      <p id="contador-leccion">Lección 1 de 3</p>
+    </div>
+
+    <div class="curso-botones">
+      <button onclick="anteriorLeccion()">← Anterior</button>
+      <button onclick="siguienteLeccion()">Siguiente →</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Green Lear. Diseñado por Uriel Ambrosio.</p>
+  </footer>
+
+  <script src="curso.js"></script>
+</body>
+</html>

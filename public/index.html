@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Learn</title>
+  <link rel="stylesheet" href="index.css"> <!-- Enlace al CSS comentado -->
+</head>
+<body>
+
+  <div id="fondo"></div>
+  <div id="fondo1"> <div id="loader" class="loader"></div></div>
+ 
+
+  <!-- HEADER -->
+   
+  <header>
+        <div class="etiqueta">
+            <img class="logotipo" src="Imagenes\logo.png" alt="Logotipo">
+            <div class="logo">
+                GREEN LEARN<span>El Rey de las Apuestas</span>
+            </div>
+        </div>
+        <button class="btn-header" id="boton1">Registrate</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero container visible">
+    <div class="hero-text">
+      <div class="tag">🏆 #1 De educacion ambiental en colombia</div>
+      <h1>Aprende, Mide y<br>Actua <span>Por el Medio </span>Ambiente</h1>
+      <p>La plataforma que te transforma en un ciudadano ecologico a travez de educacion interactiva, seguimiento de impacto y comunidad global.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Rgistrate</button>
+        <button class="btn-secondary" id="boton2">▶   Iniciar Sesion</button>
+      </div>
+    </div>
+    <img src="Imagenes\logo.png" class="hero-image" alt="">
+  </section>
+
+  <!-- MÉTRICAS -->
+  <section class="metrics container visible">
+    <div class="metric-box">
+      <h2>+90%</h2>
+      <p>Niños que mejoraron su conciencia ambiental tras usar GreenLearn.</p>
+    </div>
+    <div class="metric-box">
+      <h2>1000+</h2>
+      <p>Usuarios activos aprendiendo a cuidar el planeta.</p>
+    </div>
+    <div class="metric-box">
+      <h2>+200 kg CO₂ evitados</h2>
+      <p>Huella de carbono que se evitó gracias a las acciones ecológicas realizadas dentro de la app.</p>
+    </div>
+    <div class="metric-box">
+      <h2>4.8/5</h2>
+      <p>Calificación promedio por docentes, padres y niños.</p>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  
+
+  <!-- CTA FINAL -->
+  <section class="cta container visible">
+    <h2>¿Listo Para ser mejor ciudadano?</h2>
+    <ul>
+      <li>Aprende sobre reciclaje, ahorro de agua y másAprende sobre reciclaje, ahorro de agua y más</li>
+      <li>Gana premios completando retos ecológicos</li>
+      <li> ¡Conviértete en un defensor del medio ambiente!</li>
+    </ul>
+    <button class="btn-primari">Registrarme</button>
+    <p style="margin-top: 10px; color: #777;">Acceso gratuito e inmediato para empezar a cambiar el mundo.</p>
+  </section>
+
+
+  <!-- Formularios Ocultos -->
+  <!-- Formulario oculto de registro -->
+  <section class="formulario_g" id="formulario_g" name="formulario_g">
+      <h1>Registrate</h1>
+      <form action="registro.php" method="POST">
+      <input type="text" id="nombre_r" name="nombre" class="input" required placeholder="Nombre de Usuario">
+          <br>
+          <br>
+          <input type="email" id="correo" name="correo" class="input"  required placeholder="Correo Electronico">
+          <br>
+          <br>
+          <input type="password" id="contraseña_r" name="contraseña" class="input" required placeholder="Contraseña ">
+          <br>
+          <br>
+          <div class="buttons"> 
+              <button id="registrarme" name="registrarme" class="btn-formularios">Registrarme</button>
+          
+              <button id="cerrar" name="cerrar" type="button" class="btn-formularios">Cerrar</button>
+          </div>
+          <a href="#" id="boton4"  name="boton4" class="link">Ya tengo una cuenta</a>
+      </form>
+  </section>
+
+  <!-- Formulario oculto de Inicio de Sesion -->
+  <section class="formulario_g" id="formulario_i" name="formulario_i">
+    <h1>Iniciar Sesion</h1>
+    <form action="login.php" method="POST">
+        <input type="text" id="nombre" name="nombre_i" class="input"placeholder="Nombre de Usuario" required>
+        <br>
+        <br>
+        <input type="password" id="contraseña" name="contraseña_i" class="input"placeholder="Contraseña " required>
+        <br>
+        <br>
+        <div class="buttons">
+            <button id="inicio" name="inicio" class="btn-formularios">Iniciar</button>
+            <button id="cerrar2" name="cerrar2" type="button" class="btn-formularios">Cerrar</button>
+        </div>
+        <a href="#" id="boton3" name="boton3">Registrarme</a>
+    </form>
+  </section>
+
+  
+
+  <!-- Script de animación al hacer scroll -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const showSection = () => {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', showSection);
+    window.addEventListener('load', showSection);
+  </script>
+
+  <script src="index.js"></script>
+
+</body>
+</html>
