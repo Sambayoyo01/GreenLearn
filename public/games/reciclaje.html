@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Separa y Gana - Juego de Reciclaje</title>
+  <link rel="stylesheet" href="reciclaje.css">
+</head>
+<body>
+  <h1>♻️ Separa los residuos en el contenedor correcto</h1>
+
+  <div id="juego">
+    <div class="contenedores">
+      <div class="contenedor" data-tipo="reciclaje">Reciclaje</div>
+      <div class="contenedor" data-tipo="organico">Orgánico</div>
+      <div class="contenedor" data-tipo="general">Basura</div>
+    </div>
+
+    <div class="objetos">
+      <div class="objeto" draggable="true" data-tipo="reciclaje">🧴 Botella plástica</div>
+      <div class="objeto" draggable="true" data-tipo="organico">🍎 Cáscara de manzana</div>
+      <div class="objeto" draggable="true" data-tipo="general">🧻 Papel sucio</div>
+    </div>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script src="reciclaje.js"></script>
+</body>
+</html>

@@ -154,6 +154,7 @@ header {
   font-weight: bold;
   background: linear-gradient(90deg, #ffffff, #00ff37); /* Cambia los colores */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

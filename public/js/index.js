@@ -61,8 +61,7 @@
     var registrarme = document.getElementById("registrarme");
 
     // boton inicio 
-    inicio.onclick = function(event) {
-        event.preventDefault(); 
+    inicio.onclick = function(){
         formulario_i.style.display = "none";
         loader.style.display = "block";
         fondo.style.display = "none";
@@ -73,14 +72,13 @@
     }
 
     // boton registrarme
-    registrarme.onclick = function(event) {
-        event.preventDefault(); 
+    registrarme.onclick = function() { 
         formulario_g.style.display = "none"
         loader.style.display = "block";
         fondo1.style.display = "block"; 
         setTimeout(() => {
             window.location.href = "inicio.html"; 
-        }, 400);
+        }, 5000);
     }
 }
 

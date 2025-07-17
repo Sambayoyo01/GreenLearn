@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Curso: Polinizadores</title>
+  <link rel="stylesheet" href="curso.css">
+</head>
+<body>
+  <div id="curso-container">
+    <div id="pantalla-inicio">
+      <h1>Curso: La importancia de los polinizadores</h1>
+      <p>Aprende cómo estos pequeños seres mantienen la vida en el planeta.</p>
+      <button onclick="mostrarPantalla(1)">Comenzar</button>
+    </div>
+
+    <div id="pantalla-1" class="pantalla oculto">
+      <h2>¿Qué son los polinizadores?</h2>
+      <p>Los polinizadores transfieren polen entre flores, permitiendo la reproducción de plantas.</p>
+      <button onclick="mostrarPantalla(2)">Siguiente</button>
+    </div>
+
+    <div id="pantalla-2" class="pantalla oculto">
+      <h2>¿Por qué son importantes?</h2>
+      <p>El 75% de nuestros alimentos depende de ellos: frutas, verduras, semillas y más.</p>
+      <button onclick="mostrarPantalla(3)">Siguiente</button>
+    </div>
+
+    <div id="pantalla-3" class="pantalla oculto">
+      <h2>Mini Quiz</h2>
+      <p>¿Cuál de estos animales también es polinizador?</p>
+      <button onclick="evaluar('murcielago')">Murciélago</button>
+      <button onclick="evaluar('aguila')">Águila</button>
+      <div id="respuesta"></div>
+    </div>
+  </div>
+
+  <script src="curso.js"></script>
+</body>
+</html>

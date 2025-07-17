@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Green Learn</title>
-  <link rel="stylesheet" href="index.css"> <!-- Enlace al CSS comentado -->
+  <link rel="stylesheet" href="css/index.css"> <!-- Enlace al CSS comentado -->
 </head>
 <body>
 
   <div id="fondo"></div>
   <div id="fondo1"> <div id="loader" class="loader"></div></div>
- 
 
   <!-- HEADER -->
-   
   <header>
         <div class="etiqueta">
-            <img class="logotipo" src="Imagenes\logo.png" alt="Logotipo">
+            <img class="logotipo" src="img/logo.png" alt="Logotipo">
             <div class="logo">
                 GREEN LEARN<span>El Rey de las Apuestas</span>
             </div>
@@ -35,7 +33,7 @@
         <button class="btn-secondary" id="boton2">▶   Iniciar Sesion</button>
       </div>
     </div>
-    <img src="Imagenes\logo.png" class="hero-image" alt="">
+    <img src="Img/logo.png" class="hero-image" alt="">
   </section>
 
   <!-- MÉTRICAS -->
@@ -78,7 +76,7 @@
   <!-- Formulario oculto de registro -->
   <section class="formulario_g" id="formulario_g" name="formulario_g">
       <h1>Registrate</h1>
-      <form action="registro.php" method="POST">
+      <form action="../auth/registro.php" method="POST">
       <input type="text" id="nombre_r" name="nombre" class="input" required placeholder="Nombre de Usuario">
           <br>
           <br>
@@ -100,7 +98,7 @@
   <!-- Formulario oculto de Inicio de Sesion -->
   <section class="formulario_g" id="formulario_i" name="formulario_i">
     <h1>Iniciar Sesion</h1>
-    <form action="login.php" method="POST">
+    <form action="../auth/login.php" method="POST">
         <input type="text" id="nombre" name="nombre_i" class="input"placeholder="Nombre de Usuario" required>
         <br>
         <br>
@@ -132,7 +130,7 @@
     window.addEventListener('load', showSection);
   </script>
 
-  <script src="index.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 </html>
