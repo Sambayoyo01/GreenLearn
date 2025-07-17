@@ -13,7 +13,8 @@
     background-attachment: fixed;
     color: white;
     scroll-behavior: smooth;
-    background: linear-gradient(rgba(4, 20, 8, 0.808), rgba(0, 0, 0, 0.986)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center/cover;
+    background: linear-gradient(rgba(4, 20, 8, 0.808), rgba(0, 0, 0, 0.986)), 
+                url('../img/background-inicio.png') no-repeat center center/cover;
     height: 100vh;
     background-attachment: fixed;
   }
