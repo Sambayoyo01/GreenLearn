@@ -77,21 +77,17 @@
   <section class="formulario_g" id="formulario_g" name="formulario_g">
       <h1>Registrate</h1>
       <form action="../auth/registro.php" method="POST">
-      <input type="text" id="nombre_r" name="nombre" class="input" required placeholder="Nombre de Usuario">
-          <br>
-          <br>
+        
+        <div class="inputData">
+          <input type="text" id="nombre_r" name="nombre" class="input" required placeholder="Nombre de Usuario">
           <input type="email" id="correo" name="correo" class="input"  required placeholder="Correo Electronico">
-          <br>
-          <br>
           <input type="password" id="contraseña_r" name="contraseña" class="input" required placeholder="Contraseña ">
-          <br>
-          <br>
-          <div class="buttons"> 
-              <button id="registrarme" name="registrarme" class="btn-formularios">Registrarme</button>
-          
-              <button id="cerrar" name="cerrar" type="button" class="btn-formularios">Cerrar</button>
-          </div>
-          <a href="#" id="boton4"  name="boton4" class="link">Ya tengo una cuenta</a>
+        </div>
+        <div class="buttons"> 
+          <button id="registrarme" name="registrarme" class="btn-formularios">Registrarme</button>
+          <button id="cerrar" name="cerrar" type="button" class="btn-formularios">Cerrar</button>
+        </div>
+        <a href="#" id="boton4"  name="boton4" class="link">Ya tengo una cuenta</a>
       </form>
   </section>
 
@@ -99,10 +95,10 @@
   <section class="formulario_g" id="formulario_i" name="formulario_i">
     <h1>Iniciar Sesion</h1>
     <form action="../auth/login.php" method="POST">
-        <input type="text" id="nombre" name="nombre_i" class="input"placeholder="Nombre de Usuario" required>
+        <input type="text" id="" name="correo" class="input" placeholder="Correo Electronico" required>
         <br>
         <br>
-        <input type="password" id="contraseña" name="contraseña_i" class="input"placeholder="Contraseña " required>
+        <input type="password" id="contraseña" name="contraseña" class="input" placeholder="Contraseña " required>
         <br>
         <br>
         <div class="buttons">

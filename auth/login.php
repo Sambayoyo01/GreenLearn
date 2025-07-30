@@ -1,39 +1,28 @@
 <?php
-session_start();
-header("Content-Type: application/json"); // Indicamos que la respuesta será JSON
+include '../includes/db.php';
 
-include('db.php'); // Asegúrate que este archivo tenga la conexión $conexion
+session_start(); // Iniciar sesión
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contraseña'];
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nombre = $_POST['nombre_i'] ?? '';
-    $contraseña = $_POST['contraseña_i'] ?? '';
+    $result = $conexion->query("SELECT * FROM usuarios WHERE correo = '$correo'");
+    if ($result->num_rows > 0) {
+        $usuario = $result->fetch_assoc();
+        if (password_verify($contrasena, $usuario['contrasena'])) {
+            $_SESSION['usuario'] = $usuario; // Guardar la información del usuario en la sesión
 
-    // Validamos que se haya recibido algo
-    if (empty($nombre) || empty($contraseña)) {
-        echo json_encode(["status" => "error", "message" => "Faltan datos"]);
-        exit();
-    }
-
-    // Consulta segura con prepare (evita SQL Injection)
-    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE nombre = ?");
-    $stmt->bind_param("s", $nombre);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-
-    if ($resultado->num_rows > 0) {
-        $usuario = $resultado->fetch_assoc();
-
-        if (password_verify($contraseña, $usuario['contrasena'])) {
-            $_SESSION['usuario'] = $usuario;
-
-            echo json_encode(["status" => "ok", "rol" => $usuario['rol']]);
+            // Redirigir según el rol
+            if ($usuario['rol'] == 'admin') {
+                header('Location: panel_admin.php');
+            } else {
+                header('Location: panel_usuario.php');
+            }
         } else {
-            echo json_encode(["status" => "error", "message" => "Contraseña incorrecta"]);
+            echo "Contraseña incorrecta.";
         }
     } else {
-        echo json_encode(["status" => "error", "message" => "Usuario no registrado"]);
+        echo "Correo no registrado.";
     }
-} else {
-    echo json_encode(["status" => "error", "message" => "Método inválido"]);
 }
 ?>

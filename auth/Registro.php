@@ -5,6 +5,7 @@ include '../includes/db.php';
 $nombre = $_POST["nombre"];
 $correo = $_POST["correo"];
 $contrasena = password_hash($_POST["contraseña"], PASSWORD_DEFAULT);
+// $rol = $_POST["rol"];
 
 // Preparamos la consulta segura
 $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, correo, contrasena) VALUES (?, ?, ?)");
