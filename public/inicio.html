@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="css/inicio.css">
 </head>
 <body>
+
+  <div id="fondoLoader">
+    <div id="loader" class="loader"></div>
+  </div>
+
   <header>
     <img class="logotipo" src="img/logo.png" alt="Logotipo">
     <nav>
@@ -58,8 +63,7 @@
         <h3>Seguimiento</h3>
         <span>Monitorea tu progreso a lo largo del tiempo</span>
       </div>
-
-      <button id="feature">Comenzar Cálculo</button>
+      <button id="startCalculation">Comenzar Cálculo</button>
     </div>
   </div>
 
@@ -91,18 +95,16 @@
           <button>📘 Explorar Curso</button>
         </div>
       </div>
-
-      </div>
-      <div class="card">
-        <p class="card-level">Intermedio</p>
-        <p>Energías Renovables</p>
-        <button>📘 Explorar Curso</button>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/300x200/?climate" alt="">
-        <p>Conservación de Ecosistemas</p>
-        <button>📘 Explorar Curso</button>
-      </div>
+    </div>
+    <div class="card">
+      <p class="card-level">Intermedio</p>
+      <p>Energías Renovables</p>
+      <button>📘 Explorar Curso</button>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200/?climate" alt="">
+      <p>Conservación de Ecosistemas</p>
+      <button>📘 Explorar Curso</button>
     </div>
   </section>
   <section class="section-community">
@@ -171,5 +173,6 @@
     <p style="text-align:center; margin-top: 20px;">©2025 GreenLearn. Todos los derechos reservados.</p>
   </footer>
 
+  <script src="js/inicio.js"></script>
 </body>
 </html>

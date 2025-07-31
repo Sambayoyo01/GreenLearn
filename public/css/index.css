@@ -18,7 +18,9 @@ section.visible {
   transform: translateY(0);
 }
 
-#fondo{
+/* Fondos */
+
+#fondoRegister{
   display: none; /* Ocultado por defecto */
   position: fixed;
   top: 0;
@@ -28,7 +30,7 @@ section.visible {
   background: rgba(0, 0, 0, 0.884); /* Fondo oscuro */
   z-index: 999; /* Asegurarse que el fondo quede por encima de los demás elementos */
 }
-#fondo1{
+#fondoLoader{
   display: none; /* Ocultado por defecto */
   position: fixed;
   top: 0;
@@ -39,9 +41,9 @@ section.visible {
   z-index: 999; /* Asegurarse que el fondo quede por encima de los demás elementos */
 }
 
-  /* HTML: <div class="loader"></div> */
-/* HTML: <div class="loader"></div> */
-/* HTML: <div class="loader"></div> */
+
+/*Loader*/
+
 .loader {
   display: none;
   height: 80px;
@@ -92,6 +94,7 @@ header {
    font-weight: bold;
   background: linear-gradient(90deg, #ffffff, #33fa5e); /* Cambia los colores */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

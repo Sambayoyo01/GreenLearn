@@ -8,121 +8,257 @@
 </head>
 <body>
     <header>
-        <div class="container header-content">
+        <div class="header-content">
             <div class="logo">
-                <a href="inicio.html"><img src="img/logo.png"  href="inicio.html" class="logo2"></a>GreenLearn
+                <a href="inicio.html">
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+                <span>Green Learn</span>
+            </div>
+            <div class="pageTitle">
+                <span>Calculadora</span>
             </div>
         </div>
     </header>
-    
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <h1>Calculadora de Huella de Carbono</h1>
-                <p>Responde esta encuesta y descubre cuanto contaminas al medio ambiente</p>
-                <button id="boton1" class="boton1">Comenzar</button>
+    <main>
+        <div class="title">
+            <div class="mainTitle">
+                <img src="img/imagenCalculadora.png" alt="">
+                <span>Calculadora Ambiental</span>
             </div>
-        </section>
-        <section class="section1" id="section1">
-            <div class="question-container">
-                <h2>1. ¿QUÉ APARATOS ELECTRÓNICOS TIENES EN CASA?</h2>
-                <p>SELECCIONA TODOS LOS QUE TENGAS</p>
-                <ul class="options-list">
-                    <li class="option-item">
-                        <input type="checkbox" id="refrigerador">
-                        <label for="refrigerador">Refrigerador</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="lavadora" checked>
-                        <label for="lavadora">Lavadora</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="microondas">
-                        <label for="microondas">Horno de microondas</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="secadora" checked>
-                        <label for="secadora">Secadora de ropa</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="computadora">
-                        <label for="computadora">Computadora</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="lavatrastes">
-                        <label for="lavatrastes">Lavatrastes</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="laptop">
-                        <label for="laptop">Laptop</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="aspiradora">
-                        <label for="aspiradora">Aspiradora</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="consola">
-                        <label for="consola">Consola de videojuegos</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="aire">
-                        <label for="aire">Aire acondicionado</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="estereo">
-                        <label for="estereo">Estéreo</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="ventiladores">
-                        <label for="ventiladores">Ventiladores</label>
-                    </li>
-                    <li class="option-item">
-                        <input type="checkbox" id="television">
-                        <label for="television">Televisión</label>
-                    </li>
-                </ul>
-            </div>        
-            <div class="navigation-buttons">
-                <button class="nav-button back-button">ATRÁS</button>
-                <button class="nav-button next-button">SIGUIENTE</button>
-            </div>
-        </section>
-    </main>
-    <!-- Footer -->
-    <footer class="footer" id="aboutUs">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Acerca de GreenLearn</h3>
-                <p>Expertos en Educación Ambiental Digital. Con experiencia en tecnología y compromiso ecológico, desarrollamos herramientas innovadoras para enseñar a niños y jóvenes a cuidar el planeta de forma divertida e interactiva.</p>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+            <h1>Mide Tu <span>Impacto Ambiental</span></h1>
+            <p>Obtén un análisis detallado de tu huella ecológica y descubre cómo reducir tu <br> impacto en el planeta.</p>
+        </div>
+        <div class="content">
+            <!-- selecion de calculadoras -->
+            <div class="calculatorsList">
+                <h3>Selecciona tu calculadora</h3>
+                <div class="card">
+                    <button class="card-content" id="carbonCalculatorBtn">
+                        <div class="imgBox">
+                            <img src="img/huella-carbono.svg" alt="">
+                        </div>
+                        <div class="cardText">
+                            <h3>Huella de Carbono</h3>
+                            <p>Calcula tu impacto de CO2 anual</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="card">
+                    <button class="card-content" id="energyCalculatorBtn">
+                        <div class="imgBox">
+                            <img src="img/consumo-energetico.svg" alt="">
+                        </div>
+                        <div class="cardText">
+                            <h3>Consumo Energético</h3>
+                            <p>Mide tu gasto energético del hogar</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="card">
+                    <button class="card-content" id="waterCalculatorBtn">
+                        <div class="imgBox">
+                            <img src="img/consumo-agua.svg" alt="">
+                        </div>
+                        <div class="cardText">
+                            <h3>Uso de Agua</h3>
+                            <p>Evalúa tu consumo hídrico diario</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="card">
+                    <button class="card-content" id="wasteCalculatorBtn">
+                        <div class="imgBox">
+                            <img src="img/generacion-residuos.svg" alt="">
+                        </div>
+                        <div class="cardText">
+                            <h3>Generación de Residuos</h3>
+                            <p>Analiza tus desechos y reciclaje</p>
+                        </div>
+                    </button>
                 </div>
             </div>
-            
-            <div class="footer-section links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="#aboutUs">Sobre Nosotros</a></li>
-                    <li><a href="#contactUs">Contacto</a></li>
-                </ul>
+            <div class="calculator">
+                <!-- formulario huella de carbono -->
+                <div class="mainCalculator" id="carbonCalculator">
+                    <div class="calculatorTitle">
+                        <h3>
+                        <div class="imgBox">
+                            <img src="img/huella-carbono.svg" alt="">
+                        </div>
+                        Huella de Carbono
+                        </h3>
+                        <p>Completa los datos para calcular tu impacto ambiental</p>
+                    </div>
+                    <div class="calculatorContent">
+                        <div class="formGrid">
+                            <div class="calculatorForm">
+                                <label for="">Km recorridos en auto (mensual)</label>
+                                <input type="number" placeholder="1000">
+                            </div>
+                            <div class="calculatorForm">
+                                <label for="">Vuelos al año</label>
+                                <input type="number" placeholder="2">
+                            </div>
+                            <div class="calculatorForm">
+                                <label for="">Consumo eléctrico (kWh/mes)</label>
+                                <input type="number" placeholder="300">
+                            </div>
+                            <div class="calculatorForm">
+                                <label for="">Personas en el hogar</label>
+                                <input type="number" placeholder="4">
+                            </div>
+                        </div>
+
+                        <div class="calculatorButtons">
+                        <button class="sendBtn">Calcular Impacto</button>
+                        <button class="resetBtn">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin formulario huella de carbono -->
+
+                <!-- formulario consumo de energía -->
+                <div class="mainCalculator" id="energyCalculator">
+                    <div class="calculatorTitle">
+                        <h3>
+                        <div class="imgBox">
+                            <img src="img/consumo-energetico.svg" alt="">
+                        </div>
+                        Consumo de Energía
+                        </h3>
+                        <p>Completa los datos para calcular tu impacto ambiental</p>
+                    </div>
+
+                    <div class="calculatorContent" >
+                        <div class="formGrid">
+                            <div class="calculatorForm">
+                                <label for="">Consumo mensual (kWh)</label>
+                                <input type="number" placeholder="1000">
+                            </div>
+                            <div class="calculatorForm">
+                                <label for="">Tipo de energía</label>
+                                <select class="selectbox">
+                                    <option value="default" selected disabled>Selecciona una opción</option>
+                                    <option value="solar">Energía Solar</option>
+                                    <option value="electricidad">Electricidad</option>
+                                    <option value="gas">Gas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="calculatorButtons">
+                        <button class="sendBtn">Calcular Impacto</button>
+                        <button class="resetBtn">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin formulario consumo de energía -->
+
+                <!-- formulario agua -->    
+                <div class="mainCalculator" id="waterCalculator">
+                    <div class="calculatorTitle">
+                        <h3>
+                        <div class="imgBox">
+                            <img src="img/consumo-agua.svg" alt="">
+                        </div>
+                        Uso de Agua
+                        </h3>
+                        <p>Completa los datos para calcular tu impacto ambiental</p>
+                    </div>
+
+                    <div class="calculatorContent" >
+                        <div class="formGrid">
+                            <div class="calculatorForm">
+                                <label for="">Duchas diarias (minutos)</label>
+                                <input type="number" placeholder="1000">
+                            </div>
+                            <div class="calculatorForm">
+                                <label for="">Lavado de ropa (veces/semana)</label>
+                                <input type="number" placeholder="2">
+                            </div>
+                        </div>
+
+                        <div class="calculatorButtons">
+                        <button class="sendBtn">Calcular Impacto</button>
+                        <button class="resetBtn">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin formulario agua -->
+
+                <!-- formulario residuos -->
+                <div class="mainCalculator" id="wasteCalculator">
+                    <div class="calculatorTitle">
+                        <h3>
+                        <div class="imgBox">
+                            <img src="img/generacion-residuos.svg" alt="">
+                        </div>
+                        Generación de Residuos
+                        </h3>
+                        <p>Completa los datos para calcular tu impacto ambiental</p>
+                    </div>
+
+                    <div class="calculatorContent" >
+                        <div class="formGrid">
+                            <div class="calculatorForm">
+                                <label for="">Bolsas de basura (semanal)</label>
+                                <input type="number" placeholder="1000">
+                            </div>
+                            <div class="calculatorForm">
+                                 <label for="">¿Reciclas?</label>
+                                <select class="selectbox" id="recycleSelect">
+                                    <option value="default" disabled selected>Selecciona una opción</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                </select>                           
+                            </div>
+                        </div>
+
+                        <div class="calculatorButtons">
+                        <button class="sendBtn">Calcular Impacto</button>
+                        <button class="resetBtn">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin formulario residuos -->
+
+                <!-- Total de contaminación -->
+                
+                
+                <!-- <div class="totalCalculator">
+                    <div class="calculatorTitle">
+                        <h3>
+                            <div class="imgBox">
+                                <img src="" alt="">
+                            </div>
+                        Calculadora Total de Contaminación
+                        </h3>
+                        <p></p>
+                    </div>
+                    <div class="calculatorContent">
+                        <div class="calculatorResultForm">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                        <div class="calculatorButtons">
+                            <button class="sendBtn"></button>
+                            <button class="resetBtn"></button>
+                        </div>
+                    </div>
+                </div> -->
             </div>
-            
-            <div class="footer-section contact">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle Tecnológica 123</p>
-                <p><i class="fas fa-phone"></i> Teléfono: +57 300 5462120</p>
-                <p><i class="fas fa-envelope"></i> Email: GreenLearn@gmail.com</p>
+            <div class="calculatorResults" id="resultadoPanel" >
+                <div class="resultBox">
+                    <h2>Resultado</h2>
+                        <p><strong>Puntaje:</strong> <span id="scoreValue">0/100</span></p>
+                        <p><strong>Estado:</strong> <span id="scoreStatus">-</span></p>
+                        <ul id="recommendationList"></ul>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            &copy; 2025 Green Learn| Diseñado por Uriel Ambrosio
-        </div>
-    </footer>
-    <div class="" ></div>
-    <script src="js\inicio1.js"></script>
+    </main>
+    <script src="js/calculadora.js"></script>
 </body>
 </html>
