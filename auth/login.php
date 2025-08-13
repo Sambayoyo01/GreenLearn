@@ -1,28 +1,28 @@
 <?php
 include '../includes/db.php';
+session_start();
 
-session_start(); // Iniciar sesión
+header('Content-Type: application/json');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correo = $_POST['correo'];
+    $correo = trim($_POST['correo']);
     $contrasena = $_POST['contraseña'];
 
-    $result = $conexion->query("SELECT * FROM usuarios WHERE correo = '$correo'");
+    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE correo = ?");
+    $stmt->bind_param("s", $correo);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
         $usuario = $result->fetch_assoc();
         if (password_verify($contrasena, $usuario['contrasena'])) {
-            $_SESSION['usuario'] = $usuario; // Guardar la información del usuario en la sesión
-
-            // Redirigir según el rol
-            if ($usuario['rol'] == 'admin') {
-                header('Location: panel_admin.php');
-            } else {
-                header('Location: panel_usuario.php');
-            }
+            $_SESSION['usuario'] = $usuario;
+            echo json_encode(["success" => true]);
         } else {
-            echo "Contraseña incorrecta.";
+            echo json_encode(["success" => false, "message" => "Contraseña incorrecta."]);
         }
     } else {
-        echo "Correo no registrado.";
+        echo json_encode(["success" => false, "message" => "Correo no registrado."]);
     }
 }
 ?>

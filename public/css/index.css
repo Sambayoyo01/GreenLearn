@@ -37,7 +37,7 @@ section.visible {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.884); /* Fondo oscuro */
+  background: rgba(0, 0, 0, 0.555); /* Fondo oscuro */
   z-index: 999; /* Asegurarse que el fondo quede por encima de los demás elementos */
 }
 
@@ -55,8 +55,8 @@ section.visible {
   mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
   filter: blur(12px);
   z-index: 9999;
-  top: 50%;
-  left: 50%;
+  top: 48.2%;
+  left: 50.4%;
   transform: translate(-50%, -50%); /* <-- importante para centrar */
 }
 .loader:before {
@@ -353,10 +353,109 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.formulario_g{
-   display: none;
+
+/* Formularios Ocultos */
+
+/* Formulario de Rol */
+.formRol {
+  display: none;
   position: fixed;
-  top: 20%; /* Cambiado de 30% a 50% */
+  top: 28.5%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 50px;
+  border-radius: 20px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: #00bd3fc5 0px 0px 70px 0px;
+}
+
+/* Contenedor de las cards */
+.formRolContent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* Card base */
+.card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #1d9c53;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 350px;
+  height: 150px; /* Tamaño fijo */
+  display: flex;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px #00ff84;
+}
+
+/* Botón dentro de la card */
+.card-content {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Imagen de la card */
+.imgBox {
+  background-color: rgba(30, 241, 121, 0.1);
+  border: 1px solid #1ef1795e;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  min-height: 60px;
+}
+
+.imgBox img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Texto de la card */
+.cardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.cardText h3 {
+  font-size: 20px;
+  color: whitesmoke;
+  margin: 0 0 5px;
+}
+
+.cardText p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Formulario de Registro */
+.formRegister{
+  display: none;
+  position: fixed;
+  top: 20%;
   left: 40%;
   transform: translate(-50%, -50%);
   backdrop-filter: blur(30px);
@@ -368,7 +467,7 @@ header {
   box-shadow: #00bd3fc5 0px 0px 70px 0px;
 }
 
-.formulario_g h1 {
+.formRegister h1 {
   color: #ffffffbb;
   font-size: 45px;
   margin-bottom: 50px;

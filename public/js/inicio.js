@@ -11,7 +11,7 @@ window.onload = function() {
     requestAnimationFrame(() => { // Fuerza a esperar la carga del loader
       setTimeout(() => {
         window.location.href = "calculadora.html";
-      }, 2000);
+      }, 1000);
     }, 50);
   };
 };

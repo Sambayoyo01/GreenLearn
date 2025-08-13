@@ -1,35 +1,69 @@
 
 // declaracion de variables
-var boton1 = document.getElementById("boton1");
-var boton2 = document.getElementById("boton2");
 var boton3 = document.getElementById("boton3");
 var boton4 = document.getElementById("boton4");
-var formulario_g = document.getElementById("formulario_g");
-var fondoRegister = document.getElementById("fondoRegister");
+
 var cerrar = document.getElementById("cerrar");
 var cerrar2 = document.getElementById("cerrar2");
 
-// Al hacer clic en el botón "Comenzar Gratis"
-boton1.onclick = function(event) {
+// Interacciones Formulario registro
+
+// Declaración de variable de formulario Rol
+var btnRegistroNav = document.getElementById("btnRegistroNav");
+var btnRegistroMain = document.getElementById("btnRegistroMain");
+
+// Aparición de formulario
+btnRegistroNav.onclick = function(event) {
 event.preventDefault(); 
-formulario_g.style.display = "block"; 
+formRol.style.display = "block"; 
+fondoRegister.style.display = "block"; 
+}
+btnRegistroMain.onclick = function(event) {
+event.preventDefault(); 
+formRol.style.display = "block"; 
 fondoRegister.style.display = "block"; 
 }
 
-// Al hacer clic en el botón "Cerrar"
-cerrar.onclick = function(event) {
-event.preventDefault(); 
-formulario_g.style.display = "none"; 
-fondoRegister.style.display = "none"; 
+// Declaración de variable de formulario Registro
+const btnRolEstudent = document.getElementById("btnRolEstudent");
+const btnRolTeacher = document.getElementById("btnRolTeacher");
+const rolHidden = document.getElementById("rolHidden");
+
+// Aparición de formulario de resgistro
+btnRolEstudent.onclick = function(event) {
+    event.preventDefault();
+    rolHidden.value = "estudiante"; // Guardar rol 
+    formulario_g.style.display = "block"; 
+    fondoRegister.style.display = "block";
+    formRol.style.display = "none"; 
 }
-// Al hacer clic en el botón "Iniciar Sesion"
-boton2.onclick = function(event) {
+btnRolTeacher.onclick = function(event) {
+    event.preventDefault(); 
+    rolHidden.value = "profesor"; // Guardar rol
+    formulario_g.style.display = "block"; 
+    fondoRegister.style.display = "block";
+    formRol.style.display = "none";
+}
+// Ocultar formulario de Registro
+cerrar.onclick = function(event) {
+    event.preventDefault();
+    formulario_g.style.display = "none"; 
+    fondoRegister.style.display = "none"; 
+}
+
+// Interacciones Formulario Inicio
+
+// Declaración de variables
+const btnInicio = document.getElementById("btnInicio");
+
+// Aparición de formulario
+btnInicio.onclick = function(event) {
     event.preventDefault(); 
     formulario_i.style.display = "block"; 
     fondoRegister.style.display = "block"; 
 }
-//cerrar formulario inicio de sesion
 
+// Ocultar formulario
 cerrar2.onclick = function(event) {
     event.preventDefault(); 
     formulario_i.style.display = "none"; 
@@ -53,12 +87,13 @@ boton4.onclick = function(event) {
     fondoRegister.style.display = "block"; 
 }
 
-//ejecutar loader
+// Ejecutar loader
 window.onload = function() {
-    var inicio = document.getElementById("inicio");
-    var loader = document.getElementById("loader");
-    var fondoLoader = document.getElementById("fondoLoader");
-    var registrarme = document.getElementById("registrarme");
+    const inicio = document.getElementById("inicio");
+    const loader = document.getElementById("loader");
+    const fondoLoader = document.getElementById("fondoLoader");
+    const registrarme = document.getElementById("registrarme");
+    const formRegister = document.getElementById("formRegister");
 
     // boton inicio 
     inicio.onclick = function(){
@@ -71,15 +106,24 @@ window.onload = function() {
         }, 1000);
     }
 
-    // boton registrarme
-    registrarme.onclick = function() { 
-        formulario_g.style.display = "none"
+    registrarme.onclick = function (event) {
+    event.preventDefault(); // Evita que envíe por defecto
+
+    // Verificar si el formulario es válido
+    if (formRegister.checkValidity()) {
+        // Si es válido, ocultar y mostrar loader
+        formulario_g.style.display = "none";
         loader.style.display = "block";
-        fondoLoader.style.display = "block"; 
+        fondoLoader.style.display = "block";
+
         setTimeout(() => {
-            window.location.href = "inicio.html"; 
-        }, 100000);
+            window.location.href = "inicio.html";
+        }, 1000);
+    } else {
+        // Si no es válido, forzar que el navegador muestre el mensaje de error
+        formulario_g.reportValidity();
     }
+};
 }
 
 window.addEventListener("pageshow", function() {
@@ -89,6 +133,31 @@ window.addEventListener("pageshow", function() {
     document.getElementById("fondoRegister").style.display = "none";
 
 });
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const errorDiv = document.getElementById("loginError");
+
+    fetch("../auth/login.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = "inicio.html"; 
+        } else {
+            errorDiv.textContent = data.message;
+        }
+    })
+    .catch(() => {
+        errorDiv.textContent = "Ocurrió un error, intenta más tarde.";
+    });
+});
+
 
 
 

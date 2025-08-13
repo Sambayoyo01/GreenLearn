@@ -21,7 +21,7 @@
                 GREEN LEARN<span>El Rey de las Apuestas</span>
             </div>
         </div>
-        <button class="btn-header" id="boton1">Registrarse</button>
+        <button class="btn-header" id="btnRegistroNav">Registrarse</button>
   </header>
 
   <!-- HERO SECTION -->
@@ -31,8 +31,8 @@
       <h1>Aprende, Mide y<br>Actua <span>Por el Medio </span>Ambiente</h1>
       <p>La plataforma que te transforma en un ciudadano ecologico a travez de educacion interactiva, seguimiento de impacto y comunidad global.</p>
       <div class="hero-buttons">
-        <button class="btn-primary">Rgistrate</button>
-        <button class="btn-secondary" id="boton2">▶   Iniciar Sesion</button>
+        <button class="btn-primary" id="btnRegistroMain">Registrarse</button>
+        <button class="btn-secondary" id="btnInicio">▶   Iniciar Sesion</button>
       </div>
     </div>
     <img src="Img/logo.png" class="hero-image" alt="">
@@ -75,41 +75,72 @@
 
 
   <!-- Formularios Ocultos -->
+
+  <!-- Formulario Oculto de Rol -->
+  <section class="formRol" id="formRol">
+      <h1>Selecciona tu rol</h1>
+      <form class="formRolContent" action="../auth/rol.php" method="POST">
+        <!-- Rol Estudiante -->
+        <div class="card">
+            <button class="card-content" id="btnRolEstudent" name="rol" value="estudiante">
+                <div class="imgBox">
+                    <img src="" alt="">
+                </div>
+                <div class="cardText">
+                    <h3>Estudiante</h3>
+                    <p>Registrate como estudiante para acceder a la plataforma y aprender sobre la importancia del cuidado ambiental</p>
+                </div>
+            </button>
+        </div>
+        <!-- Rol Profesor -->
+        <div class="card">
+            <button class="card-content" id="btnRolTeacher" name="rol" value="profesor">
+                <div class="imgBox">
+                    <img src="" alt="">
+                </div>
+                <div class="cardText">
+                    <h3>Profesor</h3>
+                    <p>Registrate como profesor para acceder a la plataforma y enseñar sobre la importancia del cuidado ambiental</p>
+                </div>
+            </button>
+        </div>
+      </form>
+  </section>
+
   <!-- Formulario oculto de registro -->
-  <section class="formulario_g" id="formulario_g" name="formulario_g">
+  <section class="formRegister" id="formulario_g" name="formulario_g">
       <h1>Registrate</h1>
-      <form action="../auth/registro.php" method="POST">
-        
+      <form action="../auth/registro.php" method="POST" id="formRegister">
         <div class="inputData">
+           <input type="hidden" name="rol" id="rolHidden">
           <input type="text" id="nombre_r" name="nombre" class="input" required placeholder="Nombre de Usuario">
           <input type="email" id="correo" name="correo" class="input"  required placeholder="Correo Electronico">
           <input type="password" id="contraseña_r" name="contraseña" class="input" required placeholder="Contraseña ">
         </div>
         <div class="buttons"> 
           <button id="registrarme" name="registrarme" class="btn-formularios">Registrarse</button>
-          <button id="cerrar" name="cerrar" type="button" class="btn-formularios">Cerrar</button>
+          <button id="cerrar" type="button" class="btn-formularios">Cerrar</button>
         </div>
         <a href="#" id="boton4"  name="boton4" class="link">Ya tengo una cuenta</a>
       </form>
   </section>
 
   <!-- Formulario oculto de Inicio de Sesion -->
-  <section class="formulario_g" id="formulario_i" name="formulario_i">
-    <h1>Iniciar Sesion</h1>
-    <form action="../auth/login.php" method="POST">
-        <input type="text" id="" name="correo" class="input" placeholder="Correo Electronico" required>
-        <br>
-        <br>
-        <input type="password" id="contraseña" name="contraseña" class="input" placeholder="Contraseña " required>
-        <br>
-        <br>
-        <div class="buttons">
-            <button id="inicio" name="inicio" class="btn-formularios">Iniciar</button>
-            <button id="cerrar2" name="cerrar2" type="button" class="btn-formularios">Cerrar</button>
-        </div>
-        <a href="#" id="boton3" name="boton3">Registrarme</a>
-    </form>
-  </section>
+  <section class="formRegister" id="formulario_i" name="formulario_i">
+  <h1>Iniciar Sesion</h1>
+  <form id="loginForm">
+      <input type="text" name="correo" class="input" placeholder="Correo Electronico" required>
+      <br><br>
+      <input type="password" name="contraseña" class="input" placeholder="Contraseña" required>
+      <br><br>
+      <div id="loginError" style="color:rgb(9, 255, 0); font-size:14px; margin-bottom:10px;"></div>
+      <div class="buttons">
+          <button type="submit" class="btn-formularios">Iniciar</button>
+          <button id="cerrar2" type="button" class="btn-formularios">Cerrar</button>
+      </div>
+      <a href="#" id="boton3">Registrarme</a>
+  </form>
+</section>  
 
   
 
