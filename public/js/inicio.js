@@ -15,3 +15,27 @@ window.onload = function() {
     }, 50);
   };
 };
+
+const profileMenu = document.getElementById("profileMenu");
+const btMenu = document.getElementById("btnMenu");
+
+btnMenu.onclick = function(event) {
+  event.preventDefault();
+  profileMenu.classList.toggle("active");
+};
+
+// Cerrar el menú al hacer clic fuera
+document.addEventListener("click", function(event) {
+  // Si el menú está abierto y el clic NO es en el menú ni en el botón
+  if (
+    profileMenu.classList.contains("active") &&
+    !profileMenu.contains(event.target) &&
+    event.target !== btnMenu
+  ) {
+    profileMenu.classList.remove("active");
+  }
+});
+
+  
+  
+
